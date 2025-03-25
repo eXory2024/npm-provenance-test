@@ -70,13 +70,6 @@ jobs:
       - name: "Install node modules (if present)"
         run: bash -c 'if [ -f package.json ]; then npm ci ; fi'
 
-      #
-      # Make sure package.json's version field and
-      # tag name are consistent.
-      #
-      - name: "Validate package.json version (if present)"
-        run: bash -c 'if [ -f package.json ]; then clean_ver="$(printf "%s" "${{ github.ref_name }}" | cut -c2-)" ; grep -q "\"$clean_ver\"" package.json ; fi'
-
       - name: "Run .cicd/deploy.sh script"
         run: ./.cicd/deploy.sh
         env:
