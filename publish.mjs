@@ -18,7 +18,7 @@ const patchedPackageJSON = JSON.stringify({
 	"workspaces": workspaces.map(x => {
 		return `products/${x}`
 	})
-}, null, 4)
+}, null, 2)
 
 await fs.writeFile(path.join(__dirname, "package.json"), patchedPackageJSON)
 
