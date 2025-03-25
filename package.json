@@ -1,0 +1,13 @@
+{
+  "name": "npm-provenance-test",
+  "private": true,
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eXory2024/npm-provenance-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
