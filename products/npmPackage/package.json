@@ -5,5 +5,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eXory2024/npm-provenance-test.git",
+    "directory": "products/npmPackage"
+  }
 }
