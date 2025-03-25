@@ -9,6 +9,7 @@ const workspaces = await fs.readdir(
 	path.join(__dirname, "products")
 )
 
+/*
 const currentPackageJSON = JSON.parse((await fs.readFile(
 	path.join(__dirname, "package.json")
 )).toString())
@@ -21,16 +22,18 @@ const patchedPackageJSON = JSON.stringify({
 }, null, 2)
 
 await fs.writeFile(path.join(__dirname, "package.json"), patchedPackageJSON)
+*/
 
-const child = spawnSync("npm", [
-	"publish",
-	"--workspaces",
-	"--provenance",
-	"--access",
-	"public"
-], {
-	cwd: __dirname,
-	stdio: "inherit"
-})
+for (const workspace of workspaces) {
+	const child = spawnSync("npm", [
+		"publish",
+		"--provenance",
+		"--access",
+		"public"
+	], {
+		cwd: path.join(__dirname, "products", workspace),
+		stdio: "inherit"
+	})
 
-console.log(child.status)
+	console.log(child.status)
+}
