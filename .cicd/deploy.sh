@@ -1,3 +1,3 @@
 #!/bin/bash -euf
 
-npm publish --provenance --access public
+node ./publish.mjs
